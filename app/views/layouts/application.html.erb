@@ -2,10 +2,25 @@
 <html>
   <head>
     <title>Cupcake Shop</title>
-    <%= csrf_meta_tags %>
+    
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+    <!-- CSS -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <!-- meta tag for responsive site -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <%= csrf_meta_tags %>
+
+        <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
   </head>
 
   <body>
