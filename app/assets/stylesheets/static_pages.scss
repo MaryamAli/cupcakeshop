@@ -2,6 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.body{
+  position: relative;
+  padding-top: 2.0em; 
+}
+
+.navbar-fixed-top{
+  height: 3.6em;
+  color: #E7E7E7;
+}
+
+.navbar-brand{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  height: 4.313em;
+  width: 4.313em;
+}
+
+#bs-example-navbar-collapse-1{
+  margin-left: 4.286em;
+}
+
 h1{
   color: #195670;
   font-family: 'Indie Flower', cursive;
@@ -14,4 +37,33 @@ h2{
   font-family: 'Indie Flower', cursive;
   text-align: center;
   padding-top: 1.2em;
+}
+
+.container #footer-div{
+  position: absolute;
+  bottom: 0em;
+}
+
+.footer{
+  // background-color: #F8F8F8;
+  height: 3.6em;
+}
+
+ul .footer-text{
+  // width: 75%;
+
+}
+
+ul.footer-text li{
+  float: left;
+  display: inline;
+  height: 1.875em;
+  width: 1.875em;
+  padding: 0.3em;
+}
+
+.copyright{
+  float: right;
+  display: inline;
+  // width: 25%;
 }
