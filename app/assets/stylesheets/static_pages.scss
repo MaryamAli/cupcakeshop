@@ -9,7 +9,7 @@
 
 .navbar-fixed-top{
   height: 3.6em;
-  color: #E7E7E7;
+  background-color: #E7E7E7;
 }
 
 .navbar-brand{
@@ -24,6 +24,11 @@
 #bs-example-navbar-collapse-1{
   margin-left: 4.286em;
 }
+
+.navbar-default .navbar-nav li a{
+  background-color: #E7E7E7 !important;
+}
+
 
 h1{
   color: #195670;
