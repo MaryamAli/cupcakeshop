@@ -46,13 +46,10 @@
             <li><a href="<%= static_pages_about_path %>">More Info</a></li>
             <li><a href="<%= static_pages_contact_path %>">Visit Us!</a></li>
             <li>
-              <%= form_tag("/products", method: "get", class: "navbar-form navbar-left", role: "search") do %>
-              <div class="form-group">
-                <%= label_tag(:q, "Search for:", class: "sr-only") %>
-                <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search") %>
-              </div>
-              <%= button_tag("Yum!", class: "btn btn-default") %>
-                <span class="glyphicon glyphicon-search"></span>
+              <%= form_tag("/products", method: "get") do %>
+                <%= label_tag(:q, "Search for:") %>
+                <%= text_field_tag(:q) %>
+                <%= submit_tag("Search") %>
               <% end %>
             </li>
           </ul>
