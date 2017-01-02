@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
       @products = Product.where("name LIKE ? OR description LIKE ? OR colour LIKE? OR price LIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
     else
       #use ilike in production environment (postgres issue)
-      @products = Product.where("name ilike ? OR description ilike ? OR colour ilike? OR price ilike ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
+      @products = Product.where("name ILIKE ? OR description ILIKE ? OR colour ILIKE? OR price ILIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
     end
   else
     @products = Product.all
