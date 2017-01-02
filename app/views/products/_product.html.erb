@@ -5,10 +5,19 @@
         <p><%= product.description %></p>
         <p><%= product.colour %></p>
         <p><strong>$ <%= product.price %></strong></p>
-        <%= link_to 'Show', product %>
-        <%= link_to 'Edit', edit_product_path(product) %>
-        <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to product, class: "btn btn-default" do%>
+            <span class="glyphicon glyphicon-info-sign">Info</span>
+            <% end %>
+        <%= link_to edit_product_path(product), class: "btn btn-default" do %>
+            <span class= "glyphicon glyphicon-pencil">Edit</span>
+            <% end %>
+        <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>
+            <span class="glyphicon glyphicon-remove-sign"><strong>Delete</strong></span>
 
-        <%= link_to 'New Product', new_product_path %>
+            <% end %>
+
+        <%= link_to new_product_path, class: "btn btn-info" do %>
+            <span class="glyphicon glyphicon-plus">New</span>
+            <% end %>
       </div><!-- /col -->     
     <% end %>

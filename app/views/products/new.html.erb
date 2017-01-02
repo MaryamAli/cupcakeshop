@@ -2,6 +2,10 @@
 
 <%= render 'form', product: @product %>
 
-<%= link_to 'Back', products_path %> |
+<%= link_to products_path, class: "btn btn-default" do%> 
+  <span class="glyphicon glyphicon-chevron-left"> Back</span>
+  <% end %>
 
-<%= link_to 'Home', static_pages_index_path %>
+<%= link_to static_pages_index_path, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-home"> Home</span>
+  <% end %>

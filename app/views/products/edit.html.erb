@@ -2,5 +2,10 @@
 
 <%= render 'form', product: @product %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<%= link_to @product, class: "btn btn-default" do %> 
+  <span class="glyphicon glyphicon-search"> Show</span>
+  <% end %>
+  
+<%= link_to products_path, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-chevron-left"> Back</span>
+  <% end %>

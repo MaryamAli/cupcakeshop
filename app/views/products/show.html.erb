@@ -25,12 +25,20 @@
   <%= @product.price %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
+  <span class="glyphicon glyphicon-pencil">Edit</span>
+  <% end %>
 
-<%= link_to 'Home', static_pages_index_path %> |
+<%= link_to products_path, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-chevron-left">Back</span>
+  <% end %> 
 
-<%= link_to 'Back', products_path %> |
+<%= link_to root_path, class: "btn btn-default" do %> 
+  <span class="glyphicon glyphicon-home"> Home</span>
+  <% end %>
 
-<%= link_to 'Contact Us', static_pages_contact_path %>
+<%= link_to static_pages_contact_path, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-phone-alt"> Contact Us</span>
+  <% end %>
 
 
