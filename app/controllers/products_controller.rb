@@ -4,8 +4,20 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+  #return results of search
+  if params[:q]
+    search_term = params[:q]
+    #use LIKE for non-case sensitive search in dev environment
+    if (Rails.env.development?)
+      @products = Product.where("name LIKE ?", "%#{search_term}%")
+    else
+      #use ilike in production environment (postgres issue)
+      @products = Product.where("name ilike ?", "%#{search_term}%")
+    end
+  else
     @products = Product.all
   end
+end
 
   # GET /products/1
   # GET /products/1.json
