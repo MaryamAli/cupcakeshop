@@ -1,10 +1,10 @@
-<% @products.each do |product| %>
+
       <div class="col-sm-2 col-md-4">
         <%= image_tag(product.image_url, class: "img-responsive") %>
         <h1><%= product.name %></h1> 
         <p><%= product.description %></p>
         <p><%= product.colour %></p>
-        <p><strong>$ <%= product.price %></strong></p>
+        <p><strong><%= number_to_currency(product.price) %></strong></p>
         <%= link_to product, class: "btn btn-default" do%>
             <span class="glyphicon glyphicon-info-sign">Info</span>
             <% end %>
@@ -20,4 +20,3 @@
             <span class="glyphicon glyphicon-plus">New</span>
             <% end %>
       </div><!-- /col -->     
-    <% end %>
