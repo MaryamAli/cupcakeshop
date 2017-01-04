@@ -21,8 +21,8 @@
 </p>
 
 <p>
-  <strong>Price: $</strong>
-  <%= @product.price %>
+  <strong>Price: </strong>
+  <%= number_to_currency(@product.price) %>
 </p>
 
 <%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
