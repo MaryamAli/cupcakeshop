@@ -20,8 +20,10 @@
     </div>      
   </div>
 </div>
-<%= submit_tag "Send" %>   
-<% end %>
+<%= submit_tag("Send", class: "btn btn-success") %> 
+
+
+
 
 <h4>Visit Us! Location: </h4>
 <h4>Phone</h4>
@@ -31,5 +33,5 @@
 <div>
   <%= link_to image_tag("chef.svg", class:"img-responsive col-xs-1").html_safe, root_path %>
 </div>
-
+<% end %>
 <!-- <p>Find me in app/views/static_pages/contact.html.erb</p> -->
