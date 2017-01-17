@@ -51,6 +51,9 @@ group :production do
   gem 'pg'
 end
 
-gem 'devise'
 # From 5.4, for User Authentication
+gem 'devise'
+
+#from 5.5 for Authorization
+gem 'cancancan', '~> 1.10'
 
