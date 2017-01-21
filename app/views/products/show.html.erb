@@ -25,10 +25,13 @@
   <%= number_to_currency(@product.price) %>
 </p>
 
+<p>
+<%= @product.highest_rating_comment.rating %>
+<%= @product.highest_rating_comment.body.upcase %>
+</p>
+
 <%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
 
-<%= @product.highest_rating_comment %>
-<%= @product.lowest_rating_comment %>
   <span class="glyphicon glyphicon-pencil">Edit</span>
   <% end %>
 
