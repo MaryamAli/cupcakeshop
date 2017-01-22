@@ -4,6 +4,6 @@ class Comment < ApplicationRecord
 
   # Scopes
   scope :rating_desc, -> { order(rating: :desc) }
-  # scope :rating_desc, -> { order(rating: :asc)}
+  # scope :rating_asc, -> { order(rating: :asc)}
 
 end

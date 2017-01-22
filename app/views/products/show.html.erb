@@ -1,39 +1,42 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Image url:</strong>
+<br>
+  <strong class="singleProductDesc">Image url:</strong>
   <%= image_tag(@product.image_url, class: "img-responsive") %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong class="singleProductDesc">Name:</strong>
   <%= @product.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong class="singleProductDesc">Description:</strong>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong>Colour:</strong>
+  <strong class="singleProductDesc">Colour:</strong>
   <%= @product.colour %>
 </p>
 
 <p>
-  <strong>Price: </strong>
+  <strong class="singleProductDesc">Price: </strong>
   <%= number_to_currency(@product.price) %>
 </p>
 
 <p>
-<%= @product.highest_rating_comment.rating %>
-<%= @product.highest_rating_comment.body.upcase %>
-<%#= @product.lowest_rating_desc.rating %>
-<%#= @product.lowest_rating_comment.body.upcase %>
+  <strong class="singleProductDesc">Rating: </strong> 
+  <br> 
+  <br>
 
-</p>
-<p>
-  <%= @product.comments.order(rating: :desc).first.body %>
+  <%= @product.highest_rating_comment.rating %>
+  <%= @product.highest_rating_comment.body.upcase %>
+  <br>
+
+  <%= @product.lowest_rating_comment.rating %>
+  <%= @product.lowest_rating_comment.body.upcase %>
 </p>
 
 <%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
