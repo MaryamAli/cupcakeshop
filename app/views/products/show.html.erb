@@ -28,6 +28,12 @@
 <p>
 <%= @product.highest_rating_comment.rating %>
 <%= @product.highest_rating_comment.body.upcase %>
+<%#= @product.lowest_rating_desc.rating %>
+<%#= @product.lowest_rating_comment.body.upcase %>
+
+</p>
+<p>
+  <%= @product.comments.order(rating: :desc).first.body %>
 </p>
 
 <%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
