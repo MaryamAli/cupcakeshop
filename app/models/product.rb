@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   has_many :orders
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   # Comments
   def highest_rating_comment
