@@ -2,8 +2,14 @@
 
 <p>
 <br>
-  <strong class="singleProductDesc">Image url:</strong>
-  <%= image_tag(@product.image_url, class: "img-responsive") %>
+  <strong class="singleProductDesc"><span class="glyphicon glyphicon-camera"></span> Picture:</strong>
+  <div class="row">
+    <div class="col-xs-6 col-md-3">
+      <a href="#" class="thumbnail">
+        <%= image_tag(@product.image_url, class: "img-responsive") %>
+      </a>
+    </div>
+  </div>
 </p>
 
 <p>
@@ -12,21 +18,21 @@
 </p>
 
 <p>
-  <strong class="singleProductDesc">Description:</strong>
+  <strong class="singleProductDesc"><span class="glyphicon glyphicon-cutlery"></span> Description:</strong>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong class="singleProductDesc">Colour:</strong>
+  <strong class="singleProductDesc"><span class="glyphicon glyphicon-heart-empty"></span> Colour:</strong>
   <%= @product.colour %>
 </p>
 
 <p>
-  <strong class="singleProductDesc">Price: </strong>
+  <strong class="singleProductDesc"><span class="glyphicon glyphicon-piggy-bank"></span> Price: </strong>
   <%= number_to_currency(@product.price) %>
 </p>
 <p>
-  <strong class="singleProductDesc">Average Rating: </strong>
+  <strong class="singleProductDesc"><span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: </strong>
   <div class="rated" data-score="<%= @product.average_rating %>"></div>
 </p>
 

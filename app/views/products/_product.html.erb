@@ -2,10 +2,11 @@
       <div class="col-sm-2 col-md-4 img-responsive">
         <%= image_tag(product.image_url, class: "img-responsive") %>
         <h1><%= product.name %></h1> 
-        <p><%= product.description %></p>
-        <p><%= product.colour %></p>
+        <p><span class="glyphicon glyphicon-cutlery"></span> <%= product.description %></p>
+        <p><span class="glyphicon glyphicon-heart-empty"></span> <%= product.colour %></p>
 
         <p><strong><%= number_to_currency(product.price) %></strong></p>
+        <hr>
         <%= link_to product, class: "btn btn-default" do%>
             <span class="glyphicon glyphicon-info-sign">Info</span>
             <% end %>
@@ -16,5 +17,5 @@
             <span class="glyphicon glyphicon-remove-sign"><strong>Delete</strong></span>
 
             <% end %>
-
+        <hr>
       </div><!-- /col -->     
