@@ -34,7 +34,7 @@ h1{
   color: #195670;
   font-family: 'Indie Flower', cursive;
   text-align: center;
-  padding-top: 2.0em; 
+  // padding-top: 2.0em; 
 }
 
 h2{
@@ -71,4 +71,25 @@ ul.footer-text li{
   float: right;
   display: inline;
   // width: 25%;
+}
+
+.carousel {
+  margin: auto;
+}
+.carousel-inner img {
+  margin: auto;
+}
+.carousel-caption {
+  padding-bottom: 40%;
+  font-size: 3.5em;
+  text-shadow: 2px 2px 4px #000000;
+  color: #4CAFDA;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+}
+.header-featured {
+  padding: 1.250em;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: block;
+
 }
