@@ -8,16 +8,20 @@
         <p><span class="glyphicon glyphicon-heart-empty"></span> <%= product.colour %></p>
 
         <p><strong><%= number_to_currency(product.price) %></strong></p>
-        <%= link_to product, class: "btn btn-default" do%>
+        
+        <div class="well">
+          <%= link_to product, class: "btn btn-default" do%>
             <span class="glyphicon glyphicon-info-sign">Info</span>
             <% end %>
-        <%= link_to edit_product_path(product), class: "btn btn-default" do %>
-            <span class= "glyphicon glyphicon-pencil">Edit</span>
-            <% end %>
-        <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>
-            <span class="glyphicon glyphicon-remove-sign"><strong>Delete</strong></span>
+          <%= link_to edit_product_path(product), class: "btn btn-default" do %>
+              <span class= "glyphicon glyphicon-pencil">Edit</span>
+              <% end %>
+          <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>
+              <span class="glyphicon glyphicon-remove-sign"><strong>Delete</strong></span>
 
             <% end %>
+        </div> <!-- well -->
+        
       </div> <!-- caption -->
     </div> <!-- thumbnail -->
   </div> <!-- col -->

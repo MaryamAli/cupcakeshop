@@ -12,30 +12,35 @@
         <p><span class="glyphicon glyphicon-heart-empty"></span> <%= @product.colour %></p>
 
         <p><strong><%= number_to_currency(@product.price) %></strong></p>
+        
+        <div class="well well-lg">
 
+          <%= link_to products_path, class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-chevron-left">Back</span>
+            <% end %> 
+
+          <%= link_to root_path, class: "btn btn-default" do %> 
+            <span class="glyphicon glyphicon-home"> Home</span>
+            <% end %>
+
+          <%= link_to static_pages_contact_path, class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-phone-alt"> Contact</span>
+            <% end %>
           <%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
-  
-        <span class="glyphicon glyphicon-pencil">Edit</span>
-        <% end %>
-
-        <%= link_to products_path, class: "btn btn-default" do %>
-          <span class="glyphicon glyphicon-chevron-left">Back</span>
-          <% end %> 
-
-        <%= link_to root_path, class: "btn btn-default" do %> 
-          <span class="glyphicon glyphicon-home"> Home</span>
-          <% end %>
-
-        <%= link_to static_pages_contact_path, class: "btn btn-default" do %>
-        <span class="glyphicon glyphicon-phone-alt"> Contact</span>
-        <% end %>
+            <span class="glyphicon glyphicon-pencil">Edit</span>
+            <% end %>         
+        </div> <!-- well -->       
       </div> <!-- caption -->
     </div> <!-- thumbnail -->
   </div> <!-- column -->
  
   <div class="col-sm-6 col-md-4 img-responsive">
-    <strong class="singleProductDesc"><span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: </strong>
-    <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    <div class="well">
+      <strong class="singleProductDesc"><span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: </strong>
+      
+      <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    </div>
+    
 
     <p>
       <%= render partial: "new_comment" %>
