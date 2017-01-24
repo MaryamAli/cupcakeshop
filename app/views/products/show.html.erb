@@ -2,58 +2,58 @@
 
 <p>
 <br>
-  <strong class="singleProductDesc"><span class="glyphicon glyphicon-camera"></span> Picture:</strong>
-  <div class="row">
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <%= image_tag(@product.image_url, class: "img-responsive") %>
-      </a>
-    </div>
-  </div>
-</p>
+<div class="row">
+  <div class="col-sm-6 col-md-4 img-responsive">
+    <div class="thumbnail">
+      <%= image_tag(@product.image_url, class: "img-responsive") %>
+      <div class="caption">
+        <h1><%= @product.name %></h1>
+        <p><span class="glyphicon glyphicon-cutlery"></span> <%= @product.description %></p>
+        <p><span class="glyphicon glyphicon-heart-empty"></span> <%= @product.colour %></p>
 
-<p>
-  <strong class="singleProductDesc">Name:</strong>
-  <%= @product.name %>
-</p>
+        <p><strong><%= number_to_currency(@product.price) %></strong></p>
 
-<p>
-  <strong class="singleProductDesc"><span class="glyphicon glyphicon-cutlery"></span> Description:</strong>
-  <%= @product.description %>
-</p>
+          <%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
+  
+        <span class="glyphicon glyphicon-pencil">Edit</span>
+        <% end %>
 
-<p>
-  <strong class="singleProductDesc"><span class="glyphicon glyphicon-heart-empty"></span> Colour:</strong>
-  <%= @product.colour %>
-</p>
+        <%= link_to products_path, class: "btn btn-default" do %>
+          <span class="glyphicon glyphicon-chevron-left">Back</span>
+          <% end %> 
 
-<p>
-  <strong class="singleProductDesc"><span class="glyphicon glyphicon-piggy-bank"></span> Price: </strong>
-  <%= number_to_currency(@product.price) %>
-</p>
-<p>
-  <strong class="singleProductDesc"><span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: </strong>
-  <div class="rated" data-score="<%= @product.average_rating %>"></div>
-</p>
+        <%= link_to root_path, class: "btn btn-default" do %> 
+          <span class="glyphicon glyphicon-home"> Home</span>
+          <% end %>
 
-<p>
-  <%= render partial: "new_comment" %>
-</p>
-<p>
-  <%= render partial: "comments" %>
-</p>
+        <%= link_to static_pages_contact_path, class: "btn btn-default" do %>
+        <span class="glyphicon glyphicon-phone-alt"> Contact</span>
+        <% end %>
+      </div> <!-- caption -->
+    </div> <!-- thumbnail -->
+  </div> <!-- column -->
+ 
+  <div class="col-sm-6 col-md-4 img-responsive">
+    <strong class="singleProductDesc"><span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: </strong>
+    <div class="rated" data-score="<%= @product.average_rating %>"></div>
 
-<p>
-  <div class="rating"></div>
-</p>
-<p>
-  <div class="rated"></div>
-</p>
+    <p>
+      <%= render partial: "new_comment" %>
+    </p>
+    <p>
+      <%= render partial: "comments" %>
+    </p>
 
-<p>
-  <%#= f.submit "Submit" %>
-</p>
+    <p>
+      <div class="rating"></div>
+    </p>
+    <p>
+      <div class="rated"></div>
+    </p>
 
+    <p>
+      <%#= f.submit "Submit" %>
+    </p>
 
 <!-- <p>
   <strong class="singleProductDesc">Rating: </strong>  -->
@@ -65,22 +65,6 @@
   <%#= @product.lowest_rating_comment.rating %>
   <%#= @product.lowest_rating_comment.body.upcase %>
 <!-- </p> -->
-
-<%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
-
-  <span class="glyphicon glyphicon-pencil">Edit</span>
-  <% end %>
-
-<%= link_to products_path, class: "btn btn-default" do %>
-  <span class="glyphicon glyphicon-chevron-left">Back</span>
-  <% end %> 
-
-<%= link_to root_path, class: "btn btn-default" do %> 
-  <span class="glyphicon glyphicon-home"> Home</span>
-  <% end %>
-
-<%= link_to static_pages_contact_path, class: "btn btn-default" do %>
-  <span class="glyphicon glyphicon-phone-alt"> Contact Us</span>
-  <% end %>
-
-
+  </div> <!-- column -->
+</div> <!-- row -->
+  
