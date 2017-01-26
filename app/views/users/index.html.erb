@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+  <h1>Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th style="padding-right: 10px">First name</th>
+        <th style="padding-left: 10px">Last name</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= link_to user, class: "btn btn-default" do %><span class="glyphicon glyphicon-user">Show</span>
+<% end %></td>
+          <td><%= link_to edit_user_path(user), class: "btn btn-default" do %><span class="glyphicon glyphicon-pencil">Edit</span>
+<% end %></td>
+          <td><%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %><span class="glyphicon glyphicon-remove-circle">Delete</span>
+<% end %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+  <br>
+</div>
+<%= link_to 'New User', new_user_path, class: "btn btn-success" %>
