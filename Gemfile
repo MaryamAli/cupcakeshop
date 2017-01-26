@@ -54,7 +54,11 @@ end
 # From 5.4, for User Authentication
 gem 'devise'
 
-#from 5.5 for Authorization
+# From 5.5 for Authorization
 gem 'cancancan', '~> 1.10'
+
+# From 5.9 for Pagination
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+
 
 

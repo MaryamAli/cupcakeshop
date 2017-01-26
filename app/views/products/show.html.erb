@@ -44,8 +44,13 @@
     <p>
       <%= render partial: "new_comment" %>
     </p>
-    <p>
+    <p> <!-- All comments -->
+      <hr>
+      <%= will_paginate @comments %>
+      <hr>
       <%= render partial: "comments" %>
+      <%= will_paginate @comments %>
+      <hr>
     </p>
 
     <p>
