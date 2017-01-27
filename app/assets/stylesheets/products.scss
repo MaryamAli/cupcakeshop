@@ -1,3 +1,28 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.thumbnail {
+  width: 28.571em;
+  height: 49.0em;
+  box-shadow: 1px 1px 20px #888888;
+  position: relative;
+}
+
+.thumbnail img{
+  max-width: 360px;
+  max-height: 360px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0px;
+} 
+
+.newProductBtn {
+  box-shadow: 1px 1px 20px #888888;
+}
+
+.newProdBtn {
+  color: white;
+  font-weight: bold;
+}
