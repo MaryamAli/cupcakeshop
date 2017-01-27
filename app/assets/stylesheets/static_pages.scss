@@ -9,7 +9,8 @@
 
 .navbar-fixed-top{
   height: 3.6em;
-  background-color: #E7E7E7;
+  background-color: #4CAFDA;
+  box-shadow: 1px 1px 15px #888888;
 }
 
 .navbar-brand{
@@ -26,20 +27,21 @@
 }
 
 .navbar-default .navbar-nav li a{
-  background-color: #E7E7E7 !important;
+  background-color: #4CAFDA !important;
+  height: 3.6em;
 }
 
 
 h1{
   color: #195670;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Righteous', cursive;
   text-align: center;
   // padding-top: 2.0em; 
 }
 
 h2{
   color: #4CAFDA;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Righteous', cursive;
   text-align: center;
   padding-top: 1.2em;
 }
@@ -84,7 +86,7 @@ ul.footer-text li{
   font-size: 3.5em;
   text-shadow: 2px 2px 4px #000000;
   color: #4CAFDA;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Righteous', cursive;
   text-align: center;
 }
 .header-featured {
