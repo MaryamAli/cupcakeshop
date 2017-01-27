@@ -34,24 +34,19 @@
     </div> <!-- /thumbnail -->
   </div> <!-- /column -->
  
-  <div class="col-sm-6 col-md-4 img-responsive">
+  <div class="col-sm-6 col-md-4 img-responsive"> <!-- All comments -->
     <div class="well">
       <strong class="singleProductDesc">
         <span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div>
       </strong>   
     </div> <!-- /well -->
-    
-    <p>
-      <%= render partial: "new_comment" %>
-    </p>
-
     <p> <!-- All comments -->
-      <hr>
+     
       <%= will_paginate @comments %>
       <hr>
       <%= render partial: "comments" %>
       <%= will_paginate @comments %>
-      <hr>
+      
     </p> <!-- /All comments -->
 
     <p>
@@ -60,11 +55,6 @@
     <p>
       <div class="rated"></div>
     </p>
-
-    <p>
-      <%#= f.submit "Submit" %>
-    </p>
-
 <!-- <p>
   <strong class="singleProductDesc">Rating: </strong>  -->
 
@@ -75,6 +65,14 @@
   <%#= @product.lowest_rating_comment.rating %>
   <%#= @product.lowest_rating_comment.body.upcase %>
 <!-- </p> -->
-  </div> <!-- /column -->
+  </div> <!-- / all comments column -->
+  <div class="col-sm-6 col-md-4 img-responsive"> <!-- comment form --> 
+    <p>
+      <%= render partial: "new_comment" %>
+    </p>
+    <p>
+      <%#= f.submit "Submit" %>
+    </p>
+  </div> <!-- /comment form -->
 </div> <!-- /row -->
   
