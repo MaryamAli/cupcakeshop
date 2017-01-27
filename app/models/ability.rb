@@ -4,7 +4,8 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user (not logged in)
     can :manage, User, id: user.id
-    can :destroy, Comment, user.admin: true # allows only admin to delete comments
+    if user.admin?
+      can :destroy, Comment  #only admin can destory comments
   end
 
 end
