@@ -38,11 +38,20 @@
       </strong>   
     </div> <!-- /well -->
     <p> <!-- All comments -->
-     
-      <%= will_paginate @comments %>
+      <div class="styled_pagination">
+        <%= will_paginate @comments %>
+      </div>  
       <hr>
-      <%= render partial: "comments" %>
-      <%= will_paginate @comments %>
+      <div class="page_info">
+        <%= render partial: "comments" %>
+      </div>
+
+      <div class="styled_pagination">
+        <%= will_paginate @comments %>
+      </div> 
+
+      
+      
       
     </p> <!-- /All comments -->
 

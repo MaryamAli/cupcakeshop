@@ -26,3 +26,36 @@
   color: white;
   font-weight: bold;
 }
+
+//Pagination
+
+.styled_pagination {
+  text-align: left;
+  padding: 0.3em;
+  cursor: default; }
+  .styled_pagination a, .styled_pagination span, .styled_pagination em {
+    padding: 0.2em 0.5em; }
+  .styled_pagination .disabled {
+    color: #3A7CA5; }
+  .styled_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: #A30F44; }
+  .styled_pagination a {
+    border: 1px solid #dddddd;
+    color: #3A7CA5;
+    text-decoration: none; }
+    .styled_pagination a:hover, .styled_pagination a:focus {
+      border-color: #003366;
+      background: #0063dc;
+      color: white; }
+  .styled_pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .styled_pagination .previous_page, .styled_pagination .next_page {
+    border-width: 2px; }
+  .styled_pagination .previous_page {
+    margin-right: 1em; }
+  .styled_pagination .next_page {
+    margin-left: 1em; }
+
