@@ -5,7 +5,8 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :image_url, presence: true
   validates :colour, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, 
+    :numericality => { greater_than: 0 }
 
   # Comments
   def highest_rating_comment
