@@ -3,7 +3,7 @@ class RegisteredUsersController < Devise::RegistrationsController
   def create
     super
     if @user.persisted?
-      UserMailer.hello(@user).deliver
+      UserMailer.hello(@user).deliver_now
     end
   end
 

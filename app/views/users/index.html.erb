@@ -22,11 +22,12 @@
 <% end %></td>
           <td><%= link_to edit_user_path(user), class: "btn btn-default" do %><span class="glyphicon glyphicon-pencil">Edit</span>
 <% end %></td>
-          <td><% if current_user.admin? && !current_user?(user) %>
-          <%= link_to user, method: :delete, data: { confirm: 'Are you sure?'' }, class: "btn btn-danger" do %><span class="glyphicon glyphicon-remove-circle">Delete</span>
+
+
+          <td><%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %><span class="glyphicon glyphicon-remove-circle">Delete</span>
 <% end %></td>
         </tr>
-      <% end %>
+<% end %>      
     </tbody>
   </table>
 
