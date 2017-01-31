@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   
 
   #devise custom for :users
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => { :registrations => "registered_users"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
