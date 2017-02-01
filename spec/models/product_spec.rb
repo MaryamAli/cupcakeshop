@@ -9,8 +9,15 @@ describe Product do
       @product.comments.create!(rating: 5, user: @user, body: "I won awards with this")
       @product.comments.create!(rating: 3, user: @user, body: "Good starter bike")
     end
+    
+    # For average_rating method
     it "returns the average rating of all comments" do
       expect(@product.average_rating).to eq 3
+    end
+
+    # Validation test
+    it "is not valid" do
+      expect(Product.new(description: "Nice Bike")).not_to be_valid
     end
   end
 end
