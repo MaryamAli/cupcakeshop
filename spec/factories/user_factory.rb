@@ -9,12 +9,12 @@ FactoryGirl.define do
     admin false
   end  
 
-#   factory :admin, class: User do
-#   admin_email 
-#   password "cashmeousside"
-#   admin true
-#   first_name "AdminUser"
-#   last_name "UserAdminLastName"
-# end
+  factory :admin, class: User do
+  admin_email 
+  password "cashmeousside"
+  admin true
+  first_name "AdminUser"
+  last_name "UserAdminLastName"
+end
 
 end
