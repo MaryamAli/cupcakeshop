@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5.x'
+gem 'turbolinks', '~> 5.0.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -37,6 +37,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   # From 6.4
   gem "factory_girl_rails", "~> 4.0"
+  # From 6.3 for Functional tests
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -63,9 +65,6 @@ gem 'cancancan', '~> 1.10'
 
 # From 5.9 for Pagination
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
-
-# From 6.3 for Functional tests
-gem 'rails-controller-testing'
 
 # From 6.5 for Stripe payments
 gem 'stripe'

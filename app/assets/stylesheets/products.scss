@@ -21,8 +21,8 @@
 }
 
 .thumbnail img{
-  max-width: 360px;
-  max-height: 360px;
+  // max-width: 360px;
+  // max-height: 360px;
 }
 
 .caption {
@@ -32,6 +32,8 @@
 
 .newProductBtn {
   box-shadow: 1px 1px 20px #888888;
+  margin-left: 1em;
+
 }
 
 .newProdBtn {
@@ -39,7 +41,9 @@
   font-weight: bold;
 }
 
-
+.stripe-btn{
+  margin-bottom: 1em;
+}
 // Error Messages
 
 //Pagination
