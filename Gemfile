@@ -67,6 +67,9 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 # From 6.3 for Functional tests
 gem 'rails-controller-testing'
 
+# From 6.5 for Stripe payments
+gem 'stripe'
+
 
 
 

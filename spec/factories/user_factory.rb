@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence(:email) { |n| "ruser#{n}@example.com" }
+  sequence(:email) { |n| "user#{n}@example.com" }
   
   factory :user do # NO FACTORIES OUTSIDE OF THIS BLOCK 
     email 
