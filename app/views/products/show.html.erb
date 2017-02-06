@@ -1,9 +1,11 @@
+
+<div class="container-fluid">
 <p id="notice"><%= notice %></p>
 
 <p>
 <br>
 <div class="row">
-  <div class="col-sm-6 col-md-4 img-responsive">
+  <div class="col-xs-12 col-sm-4 col-md-4 img-responsive">
     <div class="thumbnail">
       <%= image_tag(@product.image_url, class: "img-responsive") %>
       <div class="caption">
@@ -14,7 +16,8 @@
         <div class="stripe-btn">
           <%= form_tag "/payments/create" do %>
             <%= render partial: "shared/stripe_checkout_button" %>
-          <% end %></div>
+          <% end %>   
+        </div>
         <div class="well well-lg">
           <%= link_to products_path, class: "btn btn-default" do %>
             <span class="glyphicon glyphicon-chevron-left"> Back</span>
@@ -32,7 +35,7 @@
     </div> <!-- /thumbnail -->
   </div> <!-- /column -->
  
-  <div class="col-sm-6 col-md-4 img-responsive"> <!-- All comments -->
+  <div class="col-xs-12 col-sm-4 col-md-4"> <!-- All comments -->
     <div class="well">
       <strong class="singleProductDesc">
         <span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div>
@@ -49,21 +52,8 @@
 
       <div class="styled_pagination">
         <%= will_paginate @comments %>
-      </div> 
-
-      
-      
-      
+      </div>    
     </p> <!-- /All comments -->
-
-    <!-- <p>
-      <div class="rating"></div>
-    </p> -->
-   <!--  <p>
-      <div class="rated"></div>
-    </p> -->
-<!-- <p>
-  <strong class="singleProductDesc">Rating: </strong>  -->
 
   <%#= @product.highest_rating_comment.rating %>
   <%#= @product.highest_rating_comment.body.upcase %>
@@ -73,7 +63,7 @@
   <%#= @product.lowest_rating_comment.body.upcase %>
 <!-- </p> -->
   </div> <!-- / all comments column -->
-  <div class="col-sm-6 col-md-4 img-responsive"> <!-- comment form --> 
+  <div class="col-xs-12 col-sm-4 col-md-4"> <!-- comment form --> 
     <div>
     <p>
       <%= render partial: "new_comment" %>
@@ -84,4 +74,6 @@
     </div>
   </div> <!-- /comment form -->
 </div> <!-- /row -->
+</div> <!-- /container -->
+
   
