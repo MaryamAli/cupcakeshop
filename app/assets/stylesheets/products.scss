@@ -20,12 +20,21 @@
   background: linear-gradient(transparent, #4CAFDA);
   content: '';
   border-radius: 4px;
-
 }
 
 .thumbnail img{
-  // max-width: 360px;
-  // max-height: 360px;
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+
+}
+
+
+.thumbnail img:hover {
+  -webkit-filter: contrast(150%);
+
 }
 
 .caption {
