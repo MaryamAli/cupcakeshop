@@ -15,6 +15,7 @@
         <p><strong><%= number_to_currency(@product.price) %></strong></p>
         <div class="stripe-btn">
           <%= form_tag "/payments/create" do %>
+            <%= hidden_field_tag(:product_id, @product.id) %>
             <%= render partial: "shared/stripe_checkout_button" %>
           <% end %>   
         </div>

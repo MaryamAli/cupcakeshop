@@ -1,0 +1,24 @@
+<div class="container-fluid">
+<p id="notice"><%= notice %></p>
+
+<p>
+<br>
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-4 img-responsive">
+    <div class="thumbnail">
+      <%= image_tag(@product.image_url, class: "img-responsive") %>
+      <div class="caption">
+        <h1><%= @product.name %></h1>
+        <p><span class="glyphicon glyphicon-cutlery"></span> <%= @product.description %></p>
+        <p><strong><%= number_to_currency(@product.price) %></strong></p>
+        <div class="well well-lg">
+          <h2>Thank you</h2>
+          <%= link_to products_path, class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-chevron-left"> Back</span>
+            <% end %>      
+        </div> <!-- /well -->           
+      </div> <!-- /caption -->
+    </div> <!-- /thumbnail -->
+  </div> <!-- /column -->
+  </div> <!-- /row -->
+  </div> <!-- /container -->
