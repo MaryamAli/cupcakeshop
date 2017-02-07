@@ -14,10 +14,20 @@ class PaymentsController < ApplicationController
         :source => token,
         :description => params[:StripeEmail]
         )
+
+      if charge.paid
+        Order.create!( #create! returns an error msg, if any
+          product_id: @product.id,
+          user_id: @user_id,
+          total: @product.price
+          )
+      end
+
     rescue Stripe::CardError => e #card is declined
       body = e.json_body
       err = body[:error]
       flash[:error] = "Unfortunately, there was an error in processing your payment: #{err[:message]}"
     end 
-    redirect_to = product_path(@product)
+    redirect_to product_path(@product)
+  end
 end
