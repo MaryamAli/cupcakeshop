@@ -39,6 +39,8 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   # From 6.3 for Functional tests
   gem 'rails-controller-testing'
+  # for showing errors
+  gem "better_errors"
 end
 
 group :development do
