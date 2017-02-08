@@ -5,6 +5,8 @@
 .body{
   position: relative;
   padding-top: 2.0em; 
+  font-family: 'Raleway', sans-serif;
+  
 }
 
 .navbar-fixed-top{
@@ -24,12 +26,23 @@
 
 #bs-example-navbar-collapse-1{
   margin-left: 4.286em;
+
 }
 
+ul li .nav .navbar-nav .pull-right {
+  font-family: 'Raleway', sans-serif !important;
+}
+.form-group .form-control{
+  font-family: 'Raleway', sans-serif;
+}
+.yum-btn{
+  font-family: 'Raleway', sans-serif;
+}
 .navbar-default .navbar-nav li a{
   background-color: #4CAFDA !important;
   height: 3.6em;
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
 
 li.active a{
@@ -100,4 +113,15 @@ ul.copyright li{
   padding: 1.250em;
   background-color: rgba(0, 0, 0, 0.4);
   display: block;
+}
+
+// Contact Page
+.send-btn{
+  font-family: 'Raleway', sans-serif;
+  
+}
+
+.form-group {
+  font-family: 'Raleway', sans-serif;
+
 }

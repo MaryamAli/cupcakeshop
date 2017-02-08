@@ -9,7 +9,6 @@
   // height: 100%;
   box-shadow:  1px 1px 5px #888888;
   position: relative;
-
 }
 .thumbnail:before {
   position: absolute;
@@ -34,7 +33,6 @@
 
 .thumbnail img:hover {
   -webkit-filter: contrast(150%);
-
 }
 
 .caption {
@@ -42,6 +40,9 @@
   bottom: 0px;
 } 
 
+.caption p{
+  font-family: 'Raleway', sans-serif;
+}
 .newProductBtn {
   box-shadow: 1px 1px 20px #888888;
   margin-left: 1em;
@@ -59,7 +60,9 @@
 // Error Messages
 
 //Pagination
-
+.pagination {
+  font-family: 'Raleway', sans-serif;
+}
 .styled_pagination {
   text-align: left;
   padding: 0.3em;
@@ -90,3 +93,12 @@
   .styled_pagination .next_page {
     margin-left: 1em; }
 
+// Comments
+
+.well .singleProductDesc {
+  font-family: 'Raleway', sans-serif;
+  font-style: bold;
+}
+.product-reviews .row p{
+  font-family: 'Raleway', sans-serif;
+}

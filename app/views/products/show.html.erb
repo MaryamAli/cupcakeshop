@@ -10,8 +10,8 @@
       <%= image_tag(@product.image_url, class: "img-responsive") %>
       <div class="caption">
         <h1><%= @product.name %></h1>
-        <p><span class="glyphicon glyphicon-cutlery"></span> <%= @product.description %></p>
-        <p><span class="glyphicon glyphicon-heart-empty"></span> <%= @product.colour %></p>
+        <p><span class="glyphicon glyphicon-cutlery desc"></span> <%= @product.description %></p>
+        <p><span class="glyphicon glyphicon-heart-empty colour"></span> <%= @product.colour %></p>
         <p><strong><%= number_to_currency(@product.price) %></strong></p>
         <div class="stripe-btn">
           <%= form_tag "/payments/create" do %>
@@ -36,7 +36,7 @@
     </div> <!-- /thumbnail -->
   </div> <!-- /column -->
  
-  <div class="col-xs-12 col-sm-4 col-md-4"> <!-- All comments -->
+  <div class="col-xs-12 col-sm-4 col-md-4 pagination"> <!-- All comments -->
     <div class="well">
       <strong class="singleProductDesc">
         <span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div>
@@ -65,7 +65,7 @@
 <!-- </p> -->
   </div> <!-- / all comments column -->
   <div class="col-xs-12 col-sm-4 col-md-4"> <!-- comment form --> 
-    <div>
+    <div class="commentsfont">
     <p>
       <%= render partial: "new_comment" %>
     </p>

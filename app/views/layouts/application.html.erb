@@ -21,6 +21,7 @@
 
         <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
 
   </head>
 
@@ -41,13 +42,13 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav pull-right">
-            <li>
+            <li class="form-text-input">
               <%= form_tag("/products", method: "get", class: "navbar-form navbar-left", role: "search") do %>
               <div class="form-group">
                 <%= label_tag(:q, "Search for:", class: "sr-only") %>
                 <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search") %>
               </div>
-              <%= button_tag("Yum!", class: "btn btn-default") %>
+              <%= button_tag("Yum!", class: "btn btn-default yum-btn") %>
                 <span class="glyphicon glyphicon-search"></span>
               <% end %>
             </li>
