@@ -5,8 +5,7 @@
 .body{
   position: relative;
   padding-top: 2.0em; 
-  font-family: 'Raleway', sans-serif;
-  
+  font-family: 'Raleway', sans-serif; 
 }
 
 .navbar-fixed-top{
@@ -64,6 +63,11 @@ h2{
   padding-top: 1.2em;
 }
 
+h4{
+  font-family: 'Righteous', cursive;
+  color: #195670; 
+
+}
 .container #footer-div{
   position: absolute;
   bottom: 0em;
@@ -126,5 +130,15 @@ ul.copyright li{
 
 .form-group {
   font-family: 'Raleway', sans-serif;
+}
 
+#map {
+  height: 28.125em;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.location{
+  text-align: center;
+  padding: 1em;
 }
