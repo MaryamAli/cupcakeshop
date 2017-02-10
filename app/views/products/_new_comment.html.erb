@@ -1,16 +1,16 @@
 <!-- Displays a form under a product if user is signed in -->
 <% if signed_in? %>
-  <p><strong>Add a review:</strong></p>
+  <p class="commentsfont"><strong>Add a review:</strong></p>
   <%= form_for([@product, @product.comments.build]) do |f| %>
-    <p>
+    <p class="commentsfont">
       <%= f.label :body, "Comments" %><br>
       <%= f.text_area :body %>
     </p>
-    <p>
-      <p><strong>Rating:</strong></p>
-      <p class="rating indivProduct"></p>
+    <p class="commentsfont">
+      <p class="commentsfont"><strong>Add a rating:</strong></p>
+      <p class="rating indivProduct commentsfont""></p>
     </p>
-    <p>
+    <p class="commentsfont">
       <%= f.submit "Submit", class: "btn btn-success" %>
     </p>
   <% end %>
