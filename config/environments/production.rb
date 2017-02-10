@@ -86,4 +86,6 @@ Rails.application.configure do
 
   # Any dynamic links that show up inside emails from your production environment generate the right URLs
   config.action_mailer.default_url_options = { :host => 'heroku.com' }
+  # for 6.7
+  # Rails.logger.level = 2
 end

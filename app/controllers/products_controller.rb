@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
   #return results of search
+
+  # for 6.7
+  # logger.debug
+
   if params[:q]
     search_term = params[:q]
     #use LIKE for non-case sensitive search in dev environment
@@ -22,6 +26,9 @@ end
   # GET /products/1
   # GET /products/1.json
   def show
+    
+    # for 6.7
+    # byebug
     @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
   end
 
