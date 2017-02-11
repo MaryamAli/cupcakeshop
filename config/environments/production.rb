@@ -88,4 +88,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'heroku.com' }
   # for 6.7
   # Rails.logger.level = 2
+
+  # for 6.8 possible security addition
+  # config.force_ssl = true
 end

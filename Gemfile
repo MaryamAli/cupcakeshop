@@ -71,6 +71,8 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 # From 6.5 for Stripe payments
 gem 'stripe'
 
+# from 6.8 Security
+gem "brakeman", :require => false
 
 
 
