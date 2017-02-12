@@ -36,10 +36,10 @@
     </div> <!-- /thumbnail -->
   </div> <!-- /column -->
  
-  <div class="col-xs-12 col-sm-4 col-md-4 pagination"> <!-- All comments -->
+  <div class="col-xs-12 col-sm-4 col-md-4 pagination" id="ajaxReviews"> <!-- All comments -->
     <div class="well">
       <strong class="singleProductDesc">
-        <span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div>
+        <span class="glyphicon glyphicon-thumbs-up"></span> Average Rating: <div class="rated" id ="average-rating" data-score="<%= @product.average_rating %>"></div>
       </strong>   
     </div> <!-- /well -->
     <p> <!-- All comments -->
