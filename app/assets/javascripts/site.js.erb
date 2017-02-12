@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function(){
+  // Star ratings
   $('.rating').raty( {  
     scoreName: 'comment[rating]',
     starHalf: '<%= image_path('star-half.png')%>',
@@ -14,5 +15,12 @@ $(document).on('turbolinks:load', function(){
     score: function() {
       return $(this).attr('data-score');
     }
+  });
+
+  // Zoom for images
+  $('.img-zoom').elevateZoom({
+    zoomType: "lens",
+    lensShape: "round",
+    lensSize: 250
   });
 });

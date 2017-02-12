@@ -7,7 +7,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4 col-md-4 img-responsive">
     <div class="thumbnail">
-      <%= image_tag(@product.image_url, class: "img-responsive") %>
+      <%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: "@product.image_url") %>
       <div class="caption">
         <h1><%= @product.name %></h1>
         <p><span class="glyphicon glyphicon-cutlery desc"></span> <%= @product.description %></p>
