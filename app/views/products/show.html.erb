@@ -6,19 +6,23 @@
 <br>
 <div class="row">
   <div class="col-xs-12 col-sm-4 col-md-4 img-responsive">
+    <% cache @product do %>
     <div class="thumbnail">
       <%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: "@product.image_url") %>
       <div class="caption">
         <h1><%= @product.name %></h1>
         <p><span class="glyphicon glyphicon-cutlery desc"></span> <%= @product.description %></p>
         <p><span class="glyphicon glyphicon-heart-empty colour"></span> <%= @product.colour %></p>
-        <p><strong><%= number_to_currency(@product.price) %></strong></p>
+        <p><strong><%= number_to_currency(@product.price) %></strong>
+        </p>
+    
         <div class="stripe-btn">
           <%= form_tag "/payments/create" do %>
             <%= hidden_field_tag(:product_id, @product.id) %>
             <%= render partial: "shared/stripe_checkout_button" %>
           <% end %>   
         </div>
+       
         <div class="well well-lg">
           <%= link_to products_path, class: "btn btn-default" do %>
             <span class="glyphicon glyphicon-chevron-left well-btn"> Back</span>
@@ -31,9 +35,11 @@
           <%= link_to edit_product_path(@product), class: "btn btn-default" do %> 
             <span class="glyphicon glyphicon-pencil well-btn"> Edit</span>
             <% end %>      
-        </div> <!-- /well -->           
+        </div> <!-- /well --> 
+                  
       </div> <!-- /caption -->
     </div> <!-- /thumbnail -->
+    <% end %> 
   </div> <!-- /column -->
  
   <div class="col-xs-12 col-sm-4 col-md-4 pagination" id="ajaxReviews"> <!-- All comments -->
