@@ -91,4 +91,16 @@ Rails.application.configure do
 
   # for 6.8 possible security addition
   # config.force_ssl = true
+
+  # for 6.11 Memcache via heroku
+  config.cache_store = :dalli_store,
+                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                    {:username => ENV["MEMCACHIER_USERNAME"],
+                     :password => ENV["MEMCACHIER_PASSWORD"],
+                     :failover => true,
+                     :socket_timeout => 1.5,
+                     :socket_failure_delay => 0.2,
+                     :down_retry_delay => 60
+                    }
+                    
 end

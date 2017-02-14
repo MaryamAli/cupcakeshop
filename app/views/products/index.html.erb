@@ -4,13 +4,15 @@
   <h1>Products</h1>
   
   <div class="row">
+   <% cache(cache_key_for_products) do %>
     <%= render @products %>
+  <% end %> 
   </div> <!-- /row -->
   <div class="row">
     <%= link_to new_product_path, class: "btn btn-info newProductBtn" do %>
         <span class="glyphicon glyphicon-plus newProdBtn"> New</span>
     <% end %>
-  </div> <!-- /row -->
+  </div> <!-- /row -->  
 </div> <!-- /container-fluid -->
 <br>
 
