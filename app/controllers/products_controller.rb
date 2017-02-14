@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
       search_term = params[:q]
       #use LIKE for non-case sensitive search in dev environment
       if (Rails.env == "development")
-        @products = Product.where('name LIKE ? OR description LIKE ? OR colour LIKE? OR price LIKE ?', '%#{search_term}%', '%#{search_term}%', '%#{search_term}%', '%#{search_term}%')
+        @products = Product.where("name LIKE ? OR description LIKE ? OR colour LIKE? OR price LIKE ?", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
       else
         #use ilike in production environment (postgres issue)
         @products = Product.where('name ilike ? OR description ilike ? OR colour ilike?', '%#{search_term}%', '%#{search_term}%', '%#{search_term}%')
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-  end
+end
 
   # GET /products/1
   # GET /products/1.json
