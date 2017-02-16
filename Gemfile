@@ -76,6 +76,9 @@ gem 'stripe'
 # from 6.8 Security
 gem "brakeman", :require => false
 
+# From 6.12
+gem 'redis-rails'
+
 
 
 

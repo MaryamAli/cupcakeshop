@@ -15,7 +15,7 @@
         <p><span class="glyphicon glyphicon-heart-empty colour"></span> <%= @product.colour %></p>
         <p><strong><%= number_to_currency(@product.price) %></strong>
         </p>
-    
+    <% end %> <!-- /caching -->
         <div class="stripe-btn">
           <%= form_tag "/payments/create" do %>
             <%= hidden_field_tag(:product_id, @product.id) %>
@@ -39,7 +39,7 @@
                   
       </div> <!-- /caption -->
     </div> <!-- /thumbnail -->
-    <% end %> <!-- /caching -->
+    
   </div> <!-- /column -->
  
   <div class="col-xs-12 col-sm-4 col-md-4 pagination" id="ajaxReviews"> <!-- All comments -->
