@@ -102,5 +102,9 @@ Rails.application.configure do
                      :socket_failure_delay => 0.2,
                      :down_retry_delay => 60
                     }
+
+  # For 6.13 ActionCable
+  config.web_socket_server_url = "wss://cupcakeshop.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://cupcakeshop.herokuapp.com', 'http://cupcakeshop.herokuapp.com']
                     
 end
