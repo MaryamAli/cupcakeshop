@@ -92,7 +92,7 @@ Rails.application.configure do
   # for 6.8 possible security addition
   # config.force_ssl = true
 
-  # for 6.11 Memcache via heroku
+  # for 6.11 Memcachier via heroku
   config.cache_store = :dalli_store,
                     (ENV["MEMCACHIER_SERVERS"] || "").split(","),
                     {:username => ENV["MEMCACHIER_USERNAME"],
