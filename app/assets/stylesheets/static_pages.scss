@@ -66,8 +66,15 @@ h2{
 h4{
   font-family: 'Righteous', cursive;
   color: #195670; 
-
 }
+
+.carousel-inner>.item {
+  -webkit-transition-timing-function: cubic-bezier(1.000, -0.530, 0.405, 1.225);
+    -moz-transition-timing-function: cubic-bezier(1.000, -0.530, 0.405, 1.225); 
+      -o-transition-timing-function: cubic-bezier(1.000, -0.530, 0.405, 1.225); 
+        transition-timing-function: cubic-bezier(1.000, -0.530, 0.405, 1.225);
+}
+
 .container #footer-div{
   position: absolute;
   bottom: 0em;
