@@ -1,4 +1,4 @@
-var refreshRatings = function() {
+var refreshRating = function() {
 
   // Star ratings
     $('.rating').raty( {
@@ -20,11 +20,13 @@ var refreshRatings = function() {
 };
 
 $(document).on('turbolinks:load ajaxSuccess', function(){ 
-  refreshRatings();
+  refreshRating();
   // Zoom for images
   $('.img-zoom').elevateZoom({
     zoomType: "lens",
     lensShape: "round",
+    // lensFadeOut: 300,
     lensSize: 200
+    
   });
 });
