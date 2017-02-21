@@ -58,7 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'pg'
   # From 6.11 for Memcache/caching
-  # gem 'dalli'
+  gem 'dalli'
 end
 
 # From 5.4, for User Authentication
