@@ -13,13 +13,17 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
   },
 
   listen_to_comments: function() {
-    return this.perfom('listen', {
+    return this.perform('listen', {
       product_id: $("[data-product-id]").data("product-id")
     });
   }
 });
 
 // listen_to_comments is called on each page change
+// $(document).on('turbolinks:load', function() {
+//   App.product.listen_to_comments();
+// });
+
 $(document).on('turbolinks:load', function() {
   App.product.listen_to_comments();
 });
