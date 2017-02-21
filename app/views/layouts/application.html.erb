@@ -55,8 +55,8 @@
               <% end %>
             </li>
             <li><%= link_to 'Gallery', products_path %><span class="sr-only">(current)</span></li>
-            <li><%= link_to 'More Info', static_pages_contact_path %></li>
-            <li><%= link_to 'Contact Us', static_pages_about_path %></li>                   
+            <li><%= link_to 'Contact Us', static_pages_contact_path %></li> 
+            <li><%= link_to 'More Info', static_pages_about_path %></li>               
             <li>
             <% if user_signed_in? %>
               <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>

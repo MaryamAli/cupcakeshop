@@ -1,14 +1,16 @@
-<div class="container-fluid">
-<br>
-<h1>New Product</h1>
+<div class="container new-product-form">
+      <div class="col-md-6 col-md-offset-2">
+        <br>
+        <h1>New Product</h1>
 
-<%= render 'form', product: @product %>
+        <%= render 'form', product: @product %>
 
-<%= link_to products_path, class: "btn btn-default" do%> 
-  <span class="glyphicon glyphicon-chevron-left"> Back</span>
-  <% end %>
+        <%= link_to products_path, class: "btn btn-default" do%> 
+          <span class="glyphicon glyphicon-chevron-left"> Back</span>
+          <% end %>
 
-<%= link_to static_pages_index_path, class: "btn btn-default" do %>
-  <span class="glyphicon glyphicon-home"> Home</span>
-  <% end %>
-</div>
+        <%= link_to static_pages_index_path, class: "btn btn-default" do %>
+          <span class="glyphicon glyphicon-home"> Home</span>
+          <% end %>
+      </div> <!-- /col-md-6  -->   
+</div> <!-- /container -->

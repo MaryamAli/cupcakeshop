@@ -1,8 +1,12 @@
 <!-- <h1>StaticPages#about</h1> -->
-<h2>Learn more about how to customize your desserts</h2>
+<h2 class="about-page">Learn more about how to customize your desserts</h2>
+<h3 class ="about-page">We offer catering and special orders</h3>
 
-<div class="index-product-image">
-  <%= image_tag("fireworks.svg", class:"img-responsive col-xs-12") %>
+
+<div class="chef-pic">
+  <%= link_to image_tag("fireworks.svg", class:"img-responsive col-md-4 col-xs-12 about-image").html_safe, root_path %>
 </div>
+
+
 
 <!-- <p>Find me in app/views/static_pages/about.html.erb</p> -->
