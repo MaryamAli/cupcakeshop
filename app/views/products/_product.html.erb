@@ -19,15 +19,18 @@
           <%= link_to product, class: "btn btn-default" do %>
             <span class="glyphicon glyphicon-info-sign"> Info</span>
             <% end %>
-          <%= link_to edit_product_path(product), class: "btn btn-default" do %>
-              <span class= "glyphicon glyphicon-pencil"> Edit</span>
-              <% end %>
-          <% if current_user && current_user.admin? %><%= link_to ('<span class="glyphicon glyphicon-remove-sign" style="color:white"><strong></strong></span>').html_safe, product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger delete-button" do %>
-              
-            <% end %>
-            <% end %>
-        </div> <!-- well -->
-        
+          
+          <% if signed_in? && current_user.admin? %>
+            <%= link_to edit_product_path(product), class: "btn btn-default" do %> 
+                <span class="glyphicon glyphicon-pencil well-btn"> Edit</span>
+                <% end %>
+                
+            <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger delete-button" do %>
+                  <span class="glyphicon glyphicon-remove-sign" style="color:white"><strong></strong></span>
+                <% end %>
+          <% end %>
+
+        </div> <!-- well -->      
       </div> <!-- caption -->
     <% end %>  <!-- /caching -->
     </div> <!-- thumbnail -->

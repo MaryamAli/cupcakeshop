@@ -31,11 +31,6 @@
 
           <%= link_to root_path, class: "btn btn-default" do %> 
             <span class="glyphicon glyphicon-home well-btn"> Home</span>
-            <% end %>
-
-          <% if current_user && current_user.admin? %><%= link_to ('<span class="glyphicon glyphicon-pencil well-btn"> Edit</span>').html_safe, edit_product_path(@product), class: "btn btn-default" do %> 
-            
-            <% end %> 
             <% end %>     
         </div> <!-- /well --> 
                   
