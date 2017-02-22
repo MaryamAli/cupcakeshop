@@ -22,9 +22,9 @@
           <%= link_to edit_product_path(product), class: "btn btn-default" do %>
               <span class= "glyphicon glyphicon-pencil"> Edit</span>
               <% end %>
-          <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger delete-button" do %>
-              <span class="glyphicon glyphicon-remove-sign" style="color:white"><strong></strong></span>
-
+          <% if current_user && current_user.admin? %><%= link_to ('<span class="glyphicon glyphicon-remove-sign" style="color:white"><strong></strong></span>').html_safe, product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger delete-button" do %>
+              
+            <% end %>
             <% end %>
         </div> <!-- well -->
         
