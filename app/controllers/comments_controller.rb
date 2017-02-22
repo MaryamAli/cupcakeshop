@@ -4,8 +4,10 @@ class CommentsController < ApplicationController
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user
+    @user = request.env['warden'].user
     @user = current_user
-    
+
+
     respond_to do |format|
       if @comment.save
         # ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
