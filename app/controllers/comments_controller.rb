@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user
     @user = request.env['warden'].user
-    @user = current_user
+    
 
 
     respond_to do |format|
