@@ -19,7 +19,7 @@ class UserMailer < ApplicationMailer
     @product = product
     @appname = "Cupcake Shop"
     mail( :to => user.email,
-      :subject => "Thank you for your order on #{@appname}.")
+      :subject => "Thank you for your order with #{@appname}.")
   end
 
 end
