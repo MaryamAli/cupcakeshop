@@ -17,13 +17,13 @@ describe ProductsController, :type => :controller do
       expect(response).to render_template('index')
     end 
 
-    let (:q) {'blue'}
-    let(:search_term) {[]}
-    it 'returns results for a specific search' do
-      Product.should_receive(to_query).with(query).and_return search_term
-      get :products, :q => query
-      expect(assigns(:products)).to eq []
-    end
+    # let (:q) {'blue'}
+    # let(:search_term) {[]}
+    # it 'returns results for a specific search' do
+    #   Product.should_receive(to_query).with(query).and_return search_term
+    #   get :products, :q => query
+    #   expect(assigns(:products)).to eq []
+    # end
 
   end
 
