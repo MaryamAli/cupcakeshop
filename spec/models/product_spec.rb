@@ -38,12 +38,20 @@ describe Product do
       expect(Product.new(name: "exists", description: "exists", image_url: "exists", colour: nil, price: "1")).not_to be_valid
     end
 
-    it "price is invalid" do
+    it "price is not greater than zero" do
       expect(Product.new(name: "exists", description: "exists", image_url: "exists", colour: "exists", price: "0")).not_to be_valid
     end
 
-    it "is not missing all validations" do
-      expect(Product.new(name: "", description: "", image_url: "", colour: "", price: "zero")).not_to be_valid
+    it "price is not an integer" do
+      expect(Product.new(name: "exists", description: "exists", image_url: "exists", colour: "exists", price: "zero")).not_to be_valid
+    end
+
+    it "price is missing" do
+      expect(Product.new(name: "exists", description: "exists", image_url: "exists", colour: "exists", price: nil)).not_to be_valid
+    end
+
+    it "is missing all validations" do
+      expect(Product.new(name: nil, description: nil, image_url: nil, colour: nil, price: nil)).not_to be_valid
     end
   end
 end 
