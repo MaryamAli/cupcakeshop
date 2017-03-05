@@ -1,5 +1,5 @@
 FactoryGirl.define do 
-  sequence(:name) {|n| "test dessert #|n|"}
+  sequence(:description) {|n| "test dessert #|n|"}
 
   factory :product do
     name "testproduct1"
