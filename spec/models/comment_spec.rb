@@ -44,8 +44,9 @@ describe Comment, :type => :model do
     end
   
 
-    # it "tests for after_create_comment"
-    # end
+    it "tests for after_create_commit" do
+      expect(CommentUpdateJob).to receive(:perform_later)
+    end
 
     # it "tests for scope"
     # end
@@ -54,3 +55,4 @@ describe Comment, :type => :model do
     # end
   end
 end
+

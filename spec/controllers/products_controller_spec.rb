@@ -4,7 +4,7 @@ describe ProductsController, :type => :controller do
   context 'GET #index' do
     before do
       @product = Product.create(name: "race bike", description: "two wheels", image_url:"bike.jpg", colour: "blue", price: "5")
-      @product = Product.create(name: "race bike2", description: "two wheels", image_url:"bike.jpg", colour: "blue", price: "5")
+      @product = Product.create(name: "race bike2", description: "two wheels", image_url:"bike.jpg", colour: "red", price: "5")
       @product = Product.create(name: "race bike3", description: "two wheels", image_url:"bike.jpg", colour: "blue", price: "5")
       get :index
     end
@@ -16,6 +16,14 @@ describe ProductsController, :type => :controller do
     it 'renders all of the products' do
       expect(response).to render_template('index')
     end 
+
+    let (:q) {'blue'}
+    let(:search_term) {[]}
+    it 'returns results for a specific search' do
+      Product.should_receive(to_query).with(query).and_return search_term
+      get :products, :q => query
+      expect(assigns(:products)).to eq []
+    end
 
   end
 
@@ -48,12 +56,8 @@ describe ProductsController, :type => :controller do
       get :edit, params: {id: product.id}
       @product = Product.update(:name=>'blah',:description=>'desc',
         :image_url=>'img',:colour=>nil,:price=>12)
-      # expect(response).to redirect_to(assigns(:product))
-      # follow_redirect
-      # get :show, id: product.id
       expect(response).to_not render_template(:show)       
     end
-
   end
 
   context "Test for create action" do
