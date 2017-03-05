@@ -22,30 +22,28 @@ describe ProductsController, :type => :controller do
     context "Show single product"
       it 'shows one product and its comments' do
         get :show, id: product.id
-        binding.pry
+        # binding.pry
         expect(assigns(:product)).to eq product
       end
     end
   
     context "Test for create action"
       it 'creates product with all of the validations' do
-        get :show, id: product.id
-        # expect(response).to render_template(:new)
-        binding.pry
-        # this passes:
-        # expect(Product.new).to be_a_new(Product)
+        # get :show, id: product.id
+        # # binding.pry
+        # expect(product).to eq product
+        # post '/products/new'
+        # expect(response).to redirect_to (assigns(:product))
 
-        #expect(assigns(:product)).to be_a_new(Product)
-        expect(product).to eq product
-        post '/products/new'
-        expect(response).to redirect_to (assigns(:product))
-
-        expect(response).to render_template(:show)
-        expect(response.body).to include("Product was successfully created.")
+        # expect(response).to render_template(:show)
+        # expect(response.body).to include("Product was successfully created.")
+        @product = FactoryGirl.build(:product)
+      # binding.pry
+      expect(@product).to be_valid
       end
-    # end
+    end
 
-    context "Test for create action fail"
+    context "Test for create action fail" do
       it 'creates nil  product with all of the validations' do
 
         @product = Product.new(:name=>'blah',:description=>'desc',
@@ -53,7 +51,7 @@ describe ProductsController, :type => :controller do
 
       expect(@product.save).to eql false
       #expect(response).not_to be_valid
-      binding.pry 
+      # binding.pry 
         
         #get :show, id: product.id
         # expect(response).to render_template(:new)
@@ -61,13 +59,13 @@ describe ProductsController, :type => :controller do
         # this passes:
         # expect(Product.new).to be_a_new(Product)
 
-        product.colour=nil
+        @product.colour=nil
         #post '/products/new'
         post '/products/new'
         #expect(assigns(:product)).to be_a_new(Product)
         # get :show, id: product.id
         expect(response).not_to be_valid
-        binding.pry
+        # binding.pry
         expect(response).to redirect_to (assigns(:product))
 
         expect(response).to render_template(:show)
@@ -75,14 +73,7 @@ describe ProductsController, :type => :controller do
       end
     # end
   end
-  
-    def product_params
-      params.require(:product).permit(:name, :description, :image_url, :colour, :price)
-    end
-
-  def product_any_nil 
-
-  end  
+   
       # it '' do
       #   #expect(response) FAIL for validation error etc
       # end
