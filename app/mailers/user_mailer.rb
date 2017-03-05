@@ -15,8 +15,8 @@ class UserMailer < ApplicationMailer
   end
 
   def paid_success(user, product)
-    @user = user
-    @product = product
+    @user = user.first_name
+    @product = product.name
     @appname = "Cupcake Shop"
     mail( :to => user.email,
       :subject => "Thank you for your order with #{@appname}.")
