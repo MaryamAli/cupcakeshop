@@ -79,6 +79,6 @@ gem "brakeman", :require => false
 # From 6.12
 gem 'redis-rails'
 
-
-
+gem 'pry'
+gem 'pry-nav'
 

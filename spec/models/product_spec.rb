@@ -14,10 +14,36 @@ describe Product do
     it "returns the average rating of all comments" do
       expect(@product.average_rating).to eq 3
     end
+  end
 
-    # Validation test
-    it "is not valid" do
-      expect(Product.new(description: "Nice Bike")).not_to be_valid
+  context "when a new product is created" do
+    # Validation tests
+    it "is valid" do 
+      expect(Product.new(name: "exists", description: "exists", image_url: "exists", colour: "exists", price: "1")).to be_valid
+    end
+
+    it "is missing name" do
+      expect(Product.new(name: nil, description: "exists", image_url: "exists", colour: "exists", price: "1")).not_to be_valid
+    end
+
+    it "is missing description" do
+      expect(Product.new(name: "exists", description: nil, image_url: "exists", colour: "exists", price: "1")).not_to be_valid
+    end
+
+    it "is missing image" do
+      expect(Product.new(name: "exists", description: "exists", image_url: nil, colour: "exists", price: "1")).not_to be_valid
+    end
+
+    it "is missing colour" do
+      expect(Product.new(name: "exists", description: "exists", image_url: "exists", colour: nil, price: "1")).not_to be_valid
+    end
+
+    it "price is invalid" do
+      expect(Product.new(name: "exists", description: "exists", image_url: "exists", colour: "exists", price: "0")).not_to be_valid
+    end
+
+    it "is not missing all validations" do
+      expect(Product.new(name: "", description: "", image_url: "", colour: "", price: "zero")).not_to be_valid
     end
   end
 end 
