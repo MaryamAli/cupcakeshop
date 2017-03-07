@@ -1,30 +1,23 @@
 require 'rails_helper'
 
 describe ProductsController, :type => :controller do
+
   context 'GET #index' do
-    before do
-      @product = Product.create(name: "race bike", description: "two wheels", image_url:"bike.jpg", colour: "blue", price: "5")
-      @product = Product.create(name: "race bike2", description: "two wheels", image_url:"bike.jpg", colour: "red", price: "5")
-      @product = Product.create(name: "race bike3", description: "two wheels", image_url:"bike.jpg", colour: "blue", price: "5")
-      get :index
-    end
+    let!(:product_1) { Product.create(name: "blue bike", description: "two wheels", image_url:"bike.jpg", colour: "blue", price: "5") }
+    let!(:product_2) { Product.create(name: "red bike", description: "two wheels", image_url:"bike.jpg", colour: "red", price: "5") }
+    let!(:product_3) { Product.create(name: "green bike", description: "two wheels", image_url:"bike.jpg", colour: "green", price: "5") }
 
     it 'responds successfully with an HTTP 200 status' do
+      get :index
       expect(response).to have_http_status(200)
+      expect(response).to render_template('index')
+      expect(assigns[:products].to_a).to eql([product_1, product_2, product_3])
     end
 
     it 'renders all of the products' do
-      expect(response).to render_template('index')
-    end 
-
-    # let (:q) {'blue'}
-    # let(:search_term) {[]}
-    # it 'returns results for a specific search' do
-    #   Product.should_receive(to_query).with(query).and_return search_term
-    #   get :products, :q => query
-    #   expect(assigns(:products)).to eq []
-    # end
-
+      get :index, params: { q: 'red' }
+      expect(assigns[:products].to_a).to eql([product_2])
+    end
   end
 
   let (:product) {FactoryGirl.create(:product)}

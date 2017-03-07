@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe Comment, :type => :model do
+  include ActiveJob::TestHelper
 
   before do
     @comment = FactoryGirl.build(:comment, user: User.new, product: Product.new)
@@ -42,17 +43,20 @@ describe Comment, :type => :model do
       @comment = FactoryGirl.build(:comment, body: nil, user: nil, product: nil, rating: nil)
       expect(@comment).to_not be_valid
     end
-  
-
-    # it "tests for after_create_commit" do
-    #   expect(CommentUpdateJob).to receive(:perform_later)
-    # end
-
-    # it "tests for scope"
-    # end
-
-    # it "doesn't stop working in the future"
-    # end
   end
+
+  before do
+    @comment = FactoryGirl.build(:comment, user: User.new, product: Product.new)
+  end
+
+  after do
+    clear_enqueued_jobs
+  end
+
+  it "tests for after_create_commit" do
+    @comment.save!
+    expect(enqueued_jobs.size).to eq(1)
+  end
+  
 end
 
